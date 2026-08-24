@@ -1,18 +1,20 @@
-<fieldset>
-  <legend>{{localize "DND5E_HOUSE_RULES.manager.appTitle"}}</legend>
-  {{#each rules as |rule|}}
-    <div class="form-group dnd5e-house-rule">
-      <label class="checkbox">
-        <input type="checkbox" name="{{rule.id}}" {{checked rule.enabled}} />
-        {{rule.title}}
-      </label>
-      <p class="hint">{{rule.hint}}</p>
-    </div>
-  {{/each}}
-</fieldset>
-<footer class="form-footer">
-  <button type="submit">
-    <i class="fa-solid fa-save"></i>
-    {{localize "SETTINGS.Save"}}
-  </button>
-</footer>
+<div class="dnd5e-house-rules-manager">
+  <fieldset>
+    <legend>{{localize "DND5E_HOUSE_RULES.manager.appTitle"}}</legend>
+    {{#each rules as |rule|}}
+      <div class="form-group dnd5e-house-rule">
+        <label class="checkbox">
+          <input type="checkbox" name="{{rule.id}}" {{checked rule.enabled}} />
+          {{rule.title}}
+        </label>
+        <p class="hint">{{rule.hint}}</p>
+      </div>
+    {{/each}}
+  </fieldset>
+  <footer class="form-footer">
+    <button type="submit">
+      <i class="fa-solid fa-save"></i>
+      {{localize "SETTINGS.Save"}}
+    </button>
+  </footer>
+</div>
