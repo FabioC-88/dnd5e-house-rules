@@ -22,7 +22,9 @@ export default {
       name: this.titleKey,
       hint: this.hintKey,
       scope: "world",
-      config: true,
+      // config: false - toggled from the House Rules Manager menu, not the default Settings list
+      // (same pattern dnd5e itself uses for its own variant-rule settings).
+      config: false,
       type: Boolean,
       default: this.default
     });
