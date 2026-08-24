@@ -1,4 +1,8 @@
-const LEADER_STATUS_ID = "dnd5e-house-rules-leader";
+// Must be alphanumeric only: dnd5e builds this status's ActiveEffect _id by concatenating
+// "dnd5e" + this id and truncating to 16 characters (utils.staticID) without stripping
+// non-alphanumeric characters - a hyphen landing inside that window fails Foundry's ID
+// validation (which is exactly what happened with the previous "dnd5e-house-rules-leader" id).
+const LEADER_STATUS_ID = "houseRulesLeader";
 
 /**
  * DMG-style morale checks, DM-triggered rather than auto-resolved: the module only automates the
