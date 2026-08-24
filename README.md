@@ -20,10 +20,32 @@ Poi attiva il modulo nel mondo (richiede il sistema `dnd5e`).
 - **Esaurimento a 0 PF** (`exhaustion-on-drop`, disattivata di default) — ogni volta che un PG va a
   0 PF guadagna un livello di esaurimento, senza tetto per riposo (più K.O. nello stesso combattimento
   = più livelli). Vale solo per i PG, non per PNG/alleati.
+- **Controllo Morale** (`morale-check`, disattivata di default) — aggiunge uno status "Capo" da
+  attivare sui token dal Token HUD (come Prone/Poisoned) e un promemoria privato per il DM quando un
+  PNG scende a metà PF o quando un token marcato "Capo" cade — la fuga/resa resta sempre una tua
+  decisione, il modulo non muove né fa agire i token al posto tuo. Per tirare il TS Saggezza CD 10 su
+  uno o più nemici mirati/selezionati, crea una macro con:
+  ```js
+  game.modules.get("dnd5e-house-rules").api.rollMoraleCheck();
+  // oppure, con svantaggio o fallimento automatico ("forze soverchianti"):
+  game.modules.get("dnd5e-house-rules").api.rollMoraleCheck({ mode: "disadvantage" });
+  game.modules.get("dnd5e-house-rules").api.rollMoraleCheck({ mode: "autoFail" });
+  ```
+- **Menomazione invece della morte per danno massiccio** (`lingering-injury-on-massive-damage`,
+  disattivata di default) — quando un colpo porterebbe un PG a morte istantanea per la regola del
+  Danno Massiccio del DMG (che dnd5e non automatizza), il modulo lo rileva e applica invece una
+  menomazione permanente casuale (Effetto Attivo sull'attore, tabella originale in `lang/{en,it}.json`
+  sotto `rules.lingeringInjury.table`) — il personaggio sopravvive, gravemente ferito. Solo per i PG.
+  L'effetto resta finché non lo rimuovi a mano (nessuna scadenza automatica).
 
 Il **riposo lento** (riposo lungo 7 giorni / riposo breve 8 ore, variante "Gritty Realism") **non**
 è gestito da questo modulo: è un'opzione nativa del sistema dnd5e, si attiva direttamente da
 **Configure Settings → dnd5e → Rules**.
+
+Anche **"il riposo lungo conta solo in un luogo sicuro"** non è gestita dal modulo: Foundry non ha
+modo di sapere se il party è al sicuro, resta una valutazione del DM al tavolo (utile in
+abbinamento a Gritty Realism, per evitare che il party si accampi una settimana ovunque pur di
+recuperare).
 
 ## Aggiungere una nuova house rule
 

@@ -15,6 +15,55 @@
       "exhaustionOnDrop": {
         "title": "Esaurimento a 0 PF",
         "hint": "Ogni volta che un personaggio giocante va a 0 PF, guadagna un livello di esaurimento. Nessun tetto per riposo: più K.O. nello stesso combattimento aggiungono ogni volta un livello. Vale solo per i PG, non per PNG/alleati."
+      },
+      "moraleCheck": {
+        "title": "Controllo Morale",
+        "hint": "Aggiunge uno status 'capo' per i token, un promemoria per il DM a metà PF/capo caduto, e un'API macro rollMoraleCheck() (TS Saggezza CD 10) per i PNG selezionati/mirati. Fuga o resa restano una tua decisione.",
+        "leaderStatus": "Capo (Morale)",
+        "reminderHalfHp": "Promemoria Controllo Morale: {name} è appena sceso a metà PF o meno.",
+        "reminderLeaderDown": "Promemoria Controllo Morale: {name} (marcato come capo) è appena caduto.",
+        "noTargets": "Nessun token PNG mirato o selezionato per cui tirare un controllo morale.",
+        "rollFlavor": "Controllo Morale (CD {dc})",
+        "autoFail": "{name} fallisce automaticamente il controllo morale (forze soverchianti)."
+      },
+      "lingeringInjury": {
+        "title": "Menomazione invece della morte per danno massiccio",
+        "hint": "Quando il danno in eccesso di un colpo che porta un PG a 0 PF eguaglia o supera i suoi PF massimi (la regola del Danno Massiccio del DMG, che dnd5e non automatizza), invece della morte istantanea tira una menomazione permanente e la applica come Effetto Attivo. Solo per i PG. Rimuovi l'effetto a mano quando è risolto narrativamente.",
+        "announcement": "{name} subisce un colpo che sarebbe dovuto essere fatale - invece riporta: {injury}.",
+        "table": {
+          "rib": {
+            "name": "Costola Incrinata",
+            "description": "Dolore lancinante ad ogni sforzo fisico intenso."
+          },
+          "tendon": {
+            "name": "Tendine Lacerato",
+            "description": "Un arto risponde a fatica; i movimenti bruschi con quell'arto sono difficili."
+          },
+          "eye": {
+            "name": "Occhio Ferito",
+            "description": "La visione periferica da quel lato è gravemente compromessa."
+          },
+          "head": {
+            "name": "Trauma Cranico",
+            "description": "Difficoltà a concentrarsi sotto pressione."
+          },
+          "scar": {
+            "name": "Cicatrice Profonda",
+            "description": "Un marchio permanente - più estetico che invalidante, ma la ferita sottostante non è mai guarita bene."
+          },
+          "nerve": {
+            "name": "Nervo Danneggiato",
+            "description": "La presa di quella mano non è più affidabile come prima."
+          },
+          "constitution": {
+            "name": "Costituzione Minata",
+            "description": "Il corpo non si è mai davvero ripreso da quel colpo."
+          },
+          "breath": {
+            "name": "Fiato Corto",
+            "description": "I polmoni faticano dopo ogni sforzo prolungato."
+          }
+        }
       }
     }
   }

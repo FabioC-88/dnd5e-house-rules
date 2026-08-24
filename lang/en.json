@@ -15,6 +15,55 @@
       "exhaustionOnDrop": {
         "title": "Exhaustion on Drop",
         "hint": "Every time a player character drops to 0 HP, they gain one level of exhaustion. No cap per rest: repeated knockdowns in the same fight each add a level. Only affects player characters, not NPCs/allies."
+      },
+      "moraleCheck": {
+        "title": "Morale Checks",
+        "hint": "Adds a leader token status and a half-HP/leader-down GM reminder for morale checks, plus a rollMoraleCheck() macro API (DC 10 Wisdom save) for targeted NPCs. Fleeing/surrendering stays your call.",
+        "leaderStatus": "Leader (Morale)",
+        "reminderHalfHp": "Morale check reminder: {name} just dropped to half HP or less.",
+        "reminderLeaderDown": "Morale check reminder: {name} (marked as leader) was just dropped.",
+        "noTargets": "No targeted or selected NPC tokens to roll a morale check for.",
+        "rollFlavor": "Morale Check (DC {dc})",
+        "autoFail": "{name} automatically fails its morale check (overwhelming odds)."
+      },
+      "lingeringInjury": {
+        "title": "Lingering Injury instead of Massive Damage death",
+        "hint": "When a hit's leftover damage after dropping a PC to 0 HP would equal/exceed their HP max (the DMG's Massive Damage instant-death rule, which dnd5e does not automate), this rolls a Lingering Injury instead and applies it as an Active Effect. Player characters only. Remove the effect manually once resolved.",
+        "announcement": "{name} takes a blow that should have been fatal - instead they're left with: {injury}.",
+        "table": {
+          "rib": {
+            "name": "Cracked Rib",
+            "description": "Sharp pain on any strenuous physical effort."
+          },
+          "tendon": {
+            "name": "Torn Tendon",
+            "description": "One limb responds sluggishly; sudden, forceful movements with it are difficult."
+          },
+          "eye": {
+            "name": "Wounded Eye",
+            "description": "Peripheral vision on that side is badly compromised."
+          },
+          "head": {
+            "name": "Head Trauma",
+            "description": "Trouble concentrating under pressure."
+          },
+          "scar": {
+            "name": "Deep Scar",
+            "description": "A permanent mark - mostly cosmetic, but the wound underneath never quite healed right."
+          },
+          "nerve": {
+            "name": "Damaged Nerve",
+            "description": "That hand's grip can no longer be trusted the way it used to be."
+          },
+          "constitution": {
+            "name": "Weakened Constitution",
+            "description": "The body never truly recovered from that blow."
+          },
+          "breath": {
+            "name": "Shortness of Breath",
+            "description": "Lungs struggle after any sustained exertion."
+          }
+        }
       }
     }
   }
