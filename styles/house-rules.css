@@ -1,0 +1,9 @@
+.dnd5e-house-rule {
+  margin-bottom: 0.75rem;
+}
+
+.dnd5e-house-rule .hint {
+  margin: 0.15rem 0 0;
+  font-size: var(--font-size-12, 12px);
+  opacity: 0.75;
+}

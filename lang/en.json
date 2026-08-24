@@ -1,0 +1,17 @@
+{
+  "DND5E_HOUSE_RULES": {
+    "manager": {
+      "menuName": "House Rules Manager",
+      "menuLabel": "Manage House Rules",
+      "menuHint": "Open the House Rules Manager to enable or disable individual house rules for this world.",
+      "appTitle": "House Rules Manager",
+      "reloadNotice": "House rules updated. Reload Foundry so every connected client applies the change."
+    },
+    "rules": {
+      "example": {
+        "title": "Example House Rule (template)",
+        "hint": "Disabled by default. Copy the houserules/_example folder to create a new house rule; this one only logs a message to the console when enabled, as a working template."
+      }
+    }
+  }
+}

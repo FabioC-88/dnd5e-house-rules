@@ -1,0 +1,17 @@
+{
+  "DND5E_HOUSE_RULES": {
+    "manager": {
+      "menuName": "Gestore House Rules",
+      "menuLabel": "Gestisci House Rules",
+      "menuHint": "Apri il Gestore House Rules per attivare o disattivare le singole house rules di questo mondo.",
+      "appTitle": "Gestore House Rules",
+      "reloadNotice": "House rules aggiornate. Ricarica Foundry affinché tutti i client connessi applichino la modifica."
+    },
+    "rules": {
+      "example": {
+        "title": "House Rule di esempio (template)",
+        "hint": "Disattivata di default. Copia la cartella houserules/_example per creare una nuova house rule; questa si limita a scrivere un messaggio in console quando è attiva, come template funzionante."
+      }
+    }
+  }
+}
