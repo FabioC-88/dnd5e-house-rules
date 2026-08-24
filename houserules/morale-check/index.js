@@ -33,7 +33,9 @@ export default {
     if (game.settings.get(moduleId, this.id)) {
       CONFIG.DND5E.conditionTypes[LEADER_STATUS_ID] = {
         name: "DND5E_HOUSE_RULES.rules.moraleCheck.leaderStatus",
-        img: "icons/svg/target.svg" // swap for a custom icon if this one doesn't fit
+        // Shipped in the module itself (icons/leader.svg) rather than guessing a core Foundry
+        // asset path - a wrong core path renders as a blank/broken icon in the Token HUD.
+        img: `modules/${moduleId}/icons/leader.svg`
       };
     }
   },

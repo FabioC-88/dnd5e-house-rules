@@ -58,7 +58,7 @@ async function applyLingeringInjury(actor, moduleId) {
   // table and removes it manually (via the Active Effects tab) whenever it's narratively resolved.
   await actor.createEmbeddedDocuments("ActiveEffect", [{
     name,
-    img: "icons/svg/blood.svg", // swap for a custom icon if this one doesn't fit
+    img: "icons/svg/aura.svg", // dnd5e's own default icon for actor-owned Active Effects
     description,
     origin: actor.uuid,
     flags: { [moduleId]: { lingeringInjury: injuryId } }
