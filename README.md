@@ -15,6 +15,16 @@ https://github.com/FabioC-88/dnd5e-house-rules/releases/latest/download/module.j
 
 Poi attiva il modulo nel mondo (richiede il sistema `dnd5e`).
 
+## House rules disponibili
+
+- **Esaurimento a 0 PF** (`exhaustion-on-drop`, disattivata di default) — ogni volta che un PG va a
+  0 PF guadagna un livello di esaurimento, senza tetto per riposo (più K.O. nello stesso combattimento
+  = più livelli). Vale solo per i PG, non per PNG/alleati.
+
+Il **riposo lento** (riposo lungo 7 giorni / riposo breve 8 ore, variante "Gritty Realism") **non**
+è gestito da questo modulo: è un'opzione nativa del sistema dnd5e, si attiva direttamente da
+**Configure Settings → dnd5e → Rules**.
+
 ## Aggiungere una nuova house rule
 
 1. Copia `houserules/_example/` in una nuova cartella, es. `houserules/flanking/`.

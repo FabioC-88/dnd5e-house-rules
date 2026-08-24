@@ -1,4 +1,5 @@
 import exampleRule from "./_example/index.js";
+import exhaustionOnDrop from "./exhaustion-on-drop/index.js";
 
 /**
  * Explicit registry of every house rule shipped by this module.
@@ -7,5 +8,6 @@ import exampleRule from "./_example/index.js";
  * its folder (see houserules/_example) and importing it here.
  */
 export const HOUSE_RULES = [
-  exampleRule
+  exampleRule,
+  exhaustionOnDrop
 ];
