@@ -24,7 +24,10 @@
         "reminderLeaderDown": "Morale check reminder: {name} (marked as leader) was just dropped.",
         "noTargets": "No targeted or selected NPC tokens to roll a morale check for.",
         "rollFlavor": "Morale Check (DC {dc})",
-        "autoFail": "{name} automatically fails its morale check (overwhelming odds)."
+        "autoFail": "{name} automatically fails its morale check (overwhelming odds).",
+        "buttonNormal": "Roll (Normal)",
+        "buttonDisadvantage": "Roll (Disadvantage)",
+        "buttonAutoFail": "Auto-fail (overwhelming odds)"
       },
       "lingeringInjury": {
         "title": "Lingering Injury instead of Massive Damage death",

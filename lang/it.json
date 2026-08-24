@@ -24,7 +24,10 @@
         "reminderLeaderDown": "Promemoria Controllo Morale: {name} (marcato come capo) è appena caduto.",
         "noTargets": "Nessun token PNG mirato o selezionato per cui tirare un controllo morale.",
         "rollFlavor": "Controllo Morale (CD {dc})",
-        "autoFail": "{name} fallisce automaticamente il controllo morale (forze soverchianti)."
+        "autoFail": "{name} fallisce automaticamente il controllo morale (forze soverchianti).",
+        "buttonNormal": "Tira (Normale)",
+        "buttonDisadvantage": "Tira (Svantaggio)",
+        "buttonAutoFail": "Fallimento automatico (forze soverchianti)"
       },
       "lingeringInjury": {
         "title": "Menomazione invece della morte per danno massiccio",

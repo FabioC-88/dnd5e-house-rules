@@ -3,12 +3,17 @@
 // non-alphanumeric characters - a hyphen landing inside that window fails Foundry's ID
 // validation (which is exactly what happened with the previous "dnd5e-house-rules-leader" id).
 const LEADER_STATUS_ID = "houseRulesLeader";
+const CARD_CLASS = "dnd5e-house-rules-morale-check";
 
 /**
  * DMG-style morale checks, DM-triggered rather than auto-resolved: the module only automates the
  * *reminder* (HP crossed half, or a token flagged as "leader" was dropped) and the *roll* (DC 10
- * Wisdom save via the manual API below) - fleeing/surrendering stays a table decision, not something
- * a script can act out for NPC tokens.
+ * Wisdom save) - fleeing/surrendering stays a table decision, not something a script can act out
+ * for NPC tokens.
+ *
+ * The reminder is a chat card with roll buttons (Normal/Disadvantage/Auto-fail) targeting the
+ * specific actor that triggered it - no need to select/target it separately. The same roll logic
+ * is also exposed as a macro API for ad-hoc checks not tied to an HP threshold.
  *
  * The "leader" flag is a token status effect (toggle it on the Token HUD like Prone/Poisoned) rather
  * than a setting, since it is per-encounter, not a world-wide value.
@@ -60,14 +65,27 @@ export default {
 
       if ((hp.value > half) && (newHp <= half) && !alreadyNotified) {
         foundry.utils.setProperty(changes, `flags.${moduleId}.moraleHalfNotified`, true);
-        notifyMoraleCheck(actor, "half");
+        postMoraleCheckCard(actor, "half");
       } else if ((newHp > half) && alreadyNotified) {
         foundry.utils.setProperty(changes, `flags.${moduleId}.moraleHalfNotified`, false);
       }
 
       if (actor.statuses?.has(LEADER_STATUS_ID) && (hp.value > 0) && (newHp <= 0)) {
-        notifyMoraleCheck(actor, "leaderDown");
+        postMoraleCheckCard(actor, "leaderDown");
       }
+    });
+
+    // The chat card's roll buttons - html is a plain HTMLElement in this Foundry version, not jQuery.
+    Hooks.on("renderChatMessageHTML", (_message, html) => {
+      if (!game.user.isGM) return;
+      html.querySelectorAll(`.${CARD_CLASS} [data-mode]`).forEach(button => {
+        button.addEventListener("click", async () => {
+          const card = button.closest(`.${CARD_CLASS}`);
+          const actor = await fromUuid(card.dataset.actorUuid);
+          card.querySelectorAll("[data-mode]").forEach(b => b.disabled = true);
+          if (actor) await rollSingleMoraleCheck(actor, button.dataset.mode);
+        });
+      });
     });
 
     const houseRulesModule = game.modules.get(moduleId);
@@ -76,19 +94,53 @@ export default {
   }
 };
 
-function notifyMoraleCheck(actor, reason) {
-  const key = reason === "leaderDown"
+function postMoraleCheckCard(actor, reason) {
+  const textKey = reason === "leaderDown"
     ? "DND5E_HOUSE_RULES.rules.moraleCheck.reminderLeaderDown"
     : "DND5E_HOUSE_RULES.rules.moraleCheck.reminderHalfHp";
+
+  const button = (mode, labelKey) =>
+    `<button type="button" data-mode="${mode}">${game.i18n.localize(labelKey)}</button>`;
+
   ChatMessage.create({
-    content: game.i18n.format(key, { name: actor.name }),
+    content: `
+      <div class="${CARD_CLASS}" data-actor-uuid="${actor.uuid}">
+        <p>${game.i18n.format(textKey, { name: actor.name })}</p>
+        <div class="morale-check-actions">
+          ${button("normal", "DND5E_HOUSE_RULES.rules.moraleCheck.buttonNormal")}
+          ${button("disadvantage", "DND5E_HOUSE_RULES.rules.moraleCheck.buttonDisadvantage")}
+          ${button("autoFail", "DND5E_HOUSE_RULES.rules.moraleCheck.buttonAutoFail")}
+        </div>
+      </div>
+    `,
     whisper: ChatMessage.getWhisperRecipients("GM")
   });
 }
 
 /**
+ * Roll (or auto-fail) a single actor's DC 10 Wisdom morale save.
+ * @param {Actor5e} actor
+ * @param {"normal"|"disadvantage"|"autoFail"} mode
+ */
+async function rollSingleMoraleCheck(actor, mode) {
+  if (mode === "autoFail") {
+    ChatMessage.create({
+      content: game.i18n.format("DND5E_HOUSE_RULES.rules.moraleCheck.autoFail", { name: actor.name }),
+      speaker: ChatMessage.getSpeaker({ actor })
+    });
+    return;
+  }
+
+  await actor.rollSavingThrow(
+    { ability: "wis", disadvantage: mode === "disadvantage" },
+    { configure: false },
+    { data: { flavor: game.i18n.format("DND5E_HOUSE_RULES.rules.moraleCheck.rollFlavor", { dc: 10 }) } }
+  );
+}
+
+/**
  * Roll a DC 10 Wisdom morale save for each targeted (or, absent targets, controlled) NPC token.
- * Meant to be called from a GM macro:
+ * Meant to be called from a GM macro, for ad-hoc checks not tied to the automatic reminder above:
  *   game.modules.get("dnd5e-house-rules").api.rollMoraleCheck();
  *   game.modules.get("dnd5e-house-rules").api.rollMoraleCheck({ mode: "disadvantage" });
  *   game.modules.get("dnd5e-house-rules").api.rollMoraleCheck({ mode: "autoFail" });
@@ -104,19 +156,5 @@ async function rollMoraleCheck({ mode = "normal" } = {}) {
     return;
   }
 
-  for (const actor of actors) {
-    if (mode === "autoFail") {
-      ChatMessage.create({
-        content: game.i18n.format("DND5E_HOUSE_RULES.rules.moraleCheck.autoFail", { name: actor.name }),
-        speaker: ChatMessage.getSpeaker({ actor })
-      });
-      continue;
-    }
-
-    await actor.rollSavingThrow(
-      { ability: "wis", disadvantage: mode === "disadvantage" },
-      { configure: false },
-      { data: { flavor: game.i18n.format("DND5E_HOUSE_RULES.rules.moraleCheck.rollFlavor", { dc: 10 }) } }
-    );
-  }
+  for (const actor of actors) await rollSingleMoraleCheck(actor, mode);
 }
