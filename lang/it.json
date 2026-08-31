@@ -31,40 +31,48 @@
       },
       "lingeringInjury": {
         "title": "Menomazione invece della morte per danno massiccio",
-        "hint": "Quando il danno in eccesso di un colpo che porta un PG a 0 PF eguaglia o supera i suoi PF massimi (la regola del Danno Massiccio del DMG, che dnd5e non automatizza), invece della morte istantanea tira una menomazione permanente e la applica come Effetto Attivo. Solo per i PG. Rimuovi l'effetto a mano quando è risolto narrativamente.",
+        "hint": "Quando il danno in eccesso di un colpo che porta un PG a 0 PF eguaglia o supera i suoi PF massimi (la regola del Danno Massiccio del DMG, che dnd5e non automatizza), invece della morte istantanea tira una menomazione permanente e la applica come Effetto Attivo, con la sua penalità meccanica già automatizzata (svantaggi, malus ai tiri per colpire, velocità, PF massimi, caratteristiche). Solo per i PG. Rimuovi l'effetto a mano quando è risolto narrativamente.",
         "announcement": "{name} subisce un colpo che sarebbe dovuto essere fatale - invece riporta: {injury}.",
         "table": {
           "rib": {
             "name": "Costola Incrinata",
-            "description": "Dolore lancinante ad ogni sforzo fisico intenso."
+            "description": "Dolore lancinante ad ogni sforzo fisico intenso.",
+            "mechanic": "Svantaggio alle prove di Forza."
           },
           "tendon": {
             "name": "Tendine Lacerato",
-            "description": "Un arto risponde a fatica; i movimenti bruschi con quell'arto sono difficili."
+            "description": "Un arto risponde a fatica; i movimenti bruschi con quell'arto sono difficili.",
+            "mechanic": "Velocità ridotta di 5 piedi (1,5 m) e −1 ai tiri per colpire in mischia."
           },
           "eye": {
             "name": "Occhio Ferito",
-            "description": "La visione periferica da quel lato è gravemente compromessa."
+            "description": "La visione periferica da quel lato è gravemente compromessa.",
+            "mechanic": "Svantaggio alle prove di Percezione e −2 ai tiri per colpire a distanza."
           },
           "head": {
             "name": "Trauma Cranico",
-            "description": "Difficoltà a concentrarsi sotto pressione."
+            "description": "Difficoltà a concentrarsi sotto pressione.",
+            "mechanic": "Svantaggio ai tiri di concentrazione e ai tiri di iniziativa."
           },
           "scar": {
             "name": "Cicatrice Profonda",
-            "description": "Un marchio permanente - più estetico che invalidante, ma la ferita sottostante non è mai guarita bene."
+            "description": "Un marchio permanente - più estetico che invalidante, ma la ferita sottostante non è mai guarita bene.",
+            "mechanic": "−3 punti ferita massimi."
           },
           "nerve": {
             "name": "Nervo Danneggiato",
-            "description": "La presa di quella mano non è più affidabile come prima."
+            "description": "La presa di quella mano non è più affidabile come prima.",
+            "mechanic": "Svantaggio alle prove di Destrezza."
           },
           "constitution": {
             "name": "Costituzione Minata",
-            "description": "Il corpo non si è mai davvero ripreso da quel colpo."
+            "description": "Il corpo non si è mai davvero ripreso da quel colpo.",
+            "mechanic": "−1 al punteggio di Costituzione."
           },
           "breath": {
             "name": "Fiato Corto",
-            "description": "I polmoni faticano dopo ogni sforzo prolungato."
+            "description": "I polmoni faticano dopo ogni sforzo prolungato.",
+            "mechanic": "Velocità ridotta di 5 piedi (1,5 m) e svantaggio alle prove di Costituzione."
           }
         }
       },

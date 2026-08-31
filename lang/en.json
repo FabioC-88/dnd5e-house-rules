@@ -31,40 +31,48 @@
       },
       "lingeringInjury": {
         "title": "Lingering Injury instead of Massive Damage death",
-        "hint": "When a hit's leftover damage after dropping a PC to 0 HP would equal/exceed their HP max (the DMG's Massive Damage instant-death rule, which dnd5e does not automate), this rolls a Lingering Injury instead and applies it as an Active Effect. Player characters only. Remove the effect manually once resolved.",
+        "hint": "When a hit's leftover damage after dropping a PC to 0 HP would equal/exceed their HP max (the DMG's Massive Damage instant-death rule, which dnd5e does not automate), this rolls a Lingering Injury instead and applies it as an Active Effect, with its mechanical penalty already automated (disadvantage, attack roll penalties, speed, max HP, ability scores). Player characters only. Remove the effect manually once resolved.",
         "announcement": "{name} takes a blow that should have been fatal - instead they're left with: {injury}.",
         "table": {
           "rib": {
             "name": "Cracked Rib",
-            "description": "Sharp pain on any strenuous physical effort."
+            "description": "Sharp pain on any strenuous physical effort.",
+            "mechanic": "Disadvantage on Strength checks."
           },
           "tendon": {
             "name": "Torn Tendon",
-            "description": "One limb responds sluggishly; sudden, forceful movements with it are difficult."
+            "description": "One limb responds sluggishly; sudden, forceful movements with it are difficult.",
+            "mechanic": "Speed reduced by 5 feet (1.5 m) and -1 to melee attack rolls."
           },
           "eye": {
             "name": "Wounded Eye",
-            "description": "Peripheral vision on that side is badly compromised."
+            "description": "Peripheral vision on that side is badly compromised.",
+            "mechanic": "Disadvantage on Perception checks and -2 to ranged attack rolls."
           },
           "head": {
             "name": "Head Trauma",
-            "description": "Trouble concentrating under pressure."
+            "description": "Trouble concentrating under pressure.",
+            "mechanic": "Disadvantage on concentration saves and on initiative rolls."
           },
           "scar": {
             "name": "Deep Scar",
-            "description": "A permanent mark - mostly cosmetic, but the wound underneath never quite healed right."
+            "description": "A permanent mark - mostly cosmetic, but the wound underneath never quite healed right.",
+            "mechanic": "-3 maximum hit points."
           },
           "nerve": {
             "name": "Damaged Nerve",
-            "description": "That hand's grip can no longer be trusted the way it used to be."
+            "description": "That hand's grip can no longer be trusted the way it used to be.",
+            "mechanic": "Disadvantage on Dexterity checks."
           },
           "constitution": {
             "name": "Weakened Constitution",
-            "description": "The body never truly recovered from that blow."
+            "description": "The body never truly recovered from that blow.",
+            "mechanic": "-1 to the Constitution score."
           },
           "breath": {
             "name": "Shortness of Breath",
-            "description": "Lungs struggle after any sustained exertion."
+            "description": "Lungs struggle after any sustained exertion.",
+            "mechanic": "Speed reduced by 5 feet (1.5 m) and disadvantage on Constitution checks."
           }
         }
       },
