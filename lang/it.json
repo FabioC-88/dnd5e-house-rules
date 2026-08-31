@@ -67,6 +67,12 @@
             "description": "I polmoni faticano dopo ogni sforzo prolungato."
           }
         }
+      },
+      "slowNaturalHealing": {
+        "title": "Le ferite non guariscono da sole",
+        "hint": "Il riposo lungo non ripristina più i PF da solo: si torna su solo spendendo Dadi Vita (variante \"Slow Natural Healing\" del DMG). Il resto del riposo è invariato — Dadi Vita, slot incantesimi, poteri e il livello di esaurimento in meno. Vale per tutti gli attori, PNG compresi.",
+        "spendLabel": "Spendi Dadi Vita a riposo finito",
+        "spendHint": "Tira Dadi Vita finché non sei quasi a PF pieni o finché non finiscono — se serve svuota la riserva. I dadi spesi ora restano spesi fino al prossimo riposo lungo."
       }
     }
   }

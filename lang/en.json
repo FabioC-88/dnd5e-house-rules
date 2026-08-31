@@ -67,6 +67,12 @@
             "description": "Lungs struggle after any sustained exertion."
           }
         }
+      },
+      "slowNaturalHealing": {
+        "title": "Slow Natural Healing",
+        "hint": "A long rest no longer restores hit points on its own: the only way back up is spending Hit Dice (the DMG's Slow Natural Healing variant). Everything else about the rest is unchanged - Hit Dice, spell slots, item uses and the level of exhaustion it removes. Applies to every actor, NPCs included.",
+        "spendLabel": "Spend Hit Dice once the rest is over",
+        "spendHint": "Rolls Hit Dice until you are nearly at full HP or you run out - it will empty the reserve if that is what it takes. Dice spent now stay spent until the next long rest."
       }
     }
   }

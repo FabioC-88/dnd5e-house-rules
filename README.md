@@ -40,6 +40,14 @@ Poi attiva il modulo nel mondo (richiede il sistema `dnd5e`).
   menomazione permanente casuale (Effetto Attivo sull'attore, tabella originale in `lang/{en,it}.json`
   sotto `rules.lingeringInjury.table`) — il personaggio sopravvive, gravemente ferito. Solo per i PG.
   L'effetto resta finché non lo rimuovi a mano (nessuna scadenza automatica).
+- **Le ferite non guariscono da sole** (`slow-natural-healing`, disattivata di default) — col riposo
+  lungo **non** si recuperano PF in automatico: si torna su solo spendendo Dadi Vita (la variante
+  "Slow Natural Healing" del DMG). Tutto il resto del riposo è invariato: Dadi Vita, slot, poteri e
+  il livello di esaurimento in meno. Vale per tutti gli attori, PNG compresi. Il dialogo del riposo
+  lungo guadagna una spunta opzionale **"Spendi Dadi Vita a riposo finito"**, che tira i dadi *dopo*
+  che il riposo li ha restituiti — l'ordine conta: con le regole 2024 il riposo lungo ridà **tutti**
+  i dadi spesi, quindi spenderli prima significherebbe farseli rimborsare e curarsi a costo zero.
+  Per dosarli uno alla volta c'è l'app Dadi Vita della scheda, che dnd5e ha già di suo.
 
 Il **riposo lento** (riposo lungo 7 giorni / riposo breve 8 ore, variante "Gritty Realism") **non**
 è gestito da questo modulo: è un'opzione nativa del sistema dnd5e, si attiva direttamente da
