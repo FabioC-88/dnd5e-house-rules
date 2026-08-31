@@ -13,8 +13,8 @@
         "hint": "Disabled by default. Copy the houserules/_example folder to create a new house rule; this one only logs a message to the console when enabled, as a working template."
       },
       "exhaustionOnDrop": {
-        "title": "Exhaustion on Drop",
-        "hint": "Every time a player character drops to 0 HP, they gain one level of exhaustion. No cap per rest: repeated knockdowns in the same fight each add a level. Only affects player characters, not NPCs/allies."
+        "title": "Exhaustion after a Knockout",
+        "hint": "A player character who ends up at 0 HP gains one level of exhaustion the moment they are healed back above 0 HP - not the instant they drop. No cap per rest: every time they are brought back up is another level, and a character who is never healed above 0 HP gains nothing. Only affects player characters, not NPCs/allies."
       },
       "moraleCheck": {
         "title": "Morale Checks",

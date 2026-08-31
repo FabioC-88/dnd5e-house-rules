@@ -13,8 +13,8 @@
         "hint": "Disattivata di default. Copia la cartella houserules/_example per creare una nuova house rule; questa si limita a scrivere un messaggio in console quando è attiva, come template funzionante."
       },
       "exhaustionOnDrop": {
-        "title": "Esaurimento a 0 PF",
-        "hint": "Ogni volta che un personaggio giocante va a 0 PF, guadagna un livello di esaurimento. Nessun tetto per riposo: più K.O. nello stesso combattimento aggiungono ogni volta un livello. Vale solo per i PG, non per PNG/alleati."
+        "title": "Esaurimento dopo un K.O.",
+        "hint": "Un personaggio giocante che finisce a 0 PF guadagna un livello di esaurimento nel momento in cui viene curato e torna sopra 0 PF, non appena cade. Nessun tetto per riposo: ogni volta che viene rimesso in piedi è un livello in più, e chi non viene mai curato sopra 0 PF non guadagna nulla. Vale solo per i PG, non per PNG/alleati."
       },
       "moraleCheck": {
         "title": "Controllo Morale",
