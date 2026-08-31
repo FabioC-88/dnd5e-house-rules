@@ -31,48 +31,53 @@
       },
       "lingeringInjury": {
         "title": "Lingering Injury instead of Massive Damage death",
-        "hint": "When a hit's leftover damage after dropping a PC to 0 HP would equal/exceed their HP max (the DMG's Massive Damage instant-death rule, which dnd5e does not automate), this rolls a Lingering Injury instead and applies it as an Active Effect, with its mechanical penalty already automated (disadvantage, attack roll penalties, speed, max HP, ability scores). Player characters only. Remove the effect manually once resolved.",
+        "hint": "When a hit's leftover damage after dropping a PC to 0 HP would equal/exceed their HP max (the DMG's Massive Damage instant-death rule, which dnd5e does not automate), this rolls on the DMG's own Lingering Injuries table instead and applies it as an Active Effect - the part dnd5e can enforce (disadvantage, advantage, speed) is automated, the rest (repeated saving throws, decay over time) stays described for the table to apply. Player characters only. Remove the effect manually once resolved.",
         "announcement": "{name} takes a blow that should have been fatal - instead they're left with: {injury}.",
         "table": {
-          "rib": {
-            "name": "Cracked Rib",
-            "description": "Sharp pain on any strenuous physical effort.",
-            "mechanic": "Disadvantage on Strength checks."
-          },
-          "tendon": {
-            "name": "Torn Tendon",
-            "description": "One limb responds sluggishly; sudden, forceful movements with it are difficult.",
-            "mechanic": "Speed reduced by 5 feet (1.5 m) and -1 to melee attack rolls."
-          },
           "eye": {
-            "name": "Wounded Eye",
-            "description": "Peripheral vision on that side is badly compromised.",
-            "mechanic": "Disadvantage on Perception checks and -2 to ranged attack rolls."
+            "name": "Lost Eye",
+            "description": "The blow destroys an eye, or leaves it useless.",
+            "mechanic": "Disadvantage on Wisdom (Perception) checks that rely on sight and on ranged attack rolls. If no eyes remain after this injury, the character is blinded. Regenerate or equivalent magic restores the lost eye. (The ranged attack disadvantage is not automated: dnd5e keeps no such data on the actor, apply it by hand on ranged attacks.)"
           },
-          "head": {
-            "name": "Head Trauma",
-            "description": "Trouble concentrating under pressure.",
-            "mechanic": "Disadvantage on concentration saves and on initiative rolls."
+          "limb": {
+            "name": "Lost Arm or Hand",
+            "description": "The limb no longer answers, or is simply gone.",
+            "mechanic": "The character can no longer hold anything with two hands, and can hold only one object at a time. Regenerate or equivalent magic restores the lost limb. (Not automated: no Active Effect can restrict what a player holds, enforce it at the table.)"
           },
-          "scar": {
-            "name": "Deep Scar",
-            "description": "A permanent mark - mostly cosmetic, but the wound underneath never quite healed right.",
-            "mechanic": "-3 maximum hit points."
+          "leg": {
+            "name": "Lost Foot or Leg",
+            "description": "The leg no longer carries the character's weight, or is gone.",
+            "mechanic": "Walking speed is halved. The character needs a cane, crutch, or prosthesis to move unless they already have a peg leg or similar. They fall prone after taking the Dash action, and have disadvantage on all Dexterity checks made to remain balanced. Regenerate or equivalent magic restores the lost limb. (The halved speed is automated; the cane/prosthesis, the fall after Dash, and the balance disadvantage are not.)"
           },
-          "nerve": {
-            "name": "Damaged Nerve",
-            "description": "That hand's grip can no longer be trusted the way it used to be.",
-            "mechanic": "Disadvantage on Dexterity checks."
+          "hobbled": {
+            "name": "Hobbled",
+            "description": "A limp that never quite goes away.",
+            "mechanic": "Walking speed reduced by 5 feet (1.5 m). After taking the Dash action, a DC 10 Dexterity saving throw: on a failure, the character falls prone. Magical healing removes the hobble. (The speed reduction is automated; the saving throw after Dash is not.)"
           },
-          "constitution": {
-            "name": "Weakened Constitution",
-            "description": "The body never truly recovered from that blow.",
-            "mechanic": "-1 to the Constitution score."
+          "internalInjury": {
+            "name": "Internal Injury",
+            "description": "Something inside is no longer working right.",
+            "mechanic": "Whenever the character attempts an action in combat, a DC 15 Constitution saving throw: on a failure, they lose that action and can't take reactions until the start of their next turn. Heals with magical healing, or after ten days of complete rest. (Not automated: it's a saving throw repeated on every action, keep track of it at the table.)"
           },
-          "breath": {
-            "name": "Shortness of Breath",
-            "description": "Lungs struggle after any sustained exertion.",
-            "mechanic": "Speed reduced by 5 feet (1.5 m) and disadvantage on Constitution checks."
+          "brokenRibs": {
+            "name": "Broken Ribs",
+            "description": "Every deep breath is a stab of pain.",
+            "mechanic": "Same effect as Internal Injury, but the Constitution saving throw is DC 10. (Not automated, for the same reason.)"
+          },
+          "horribleScar": {
+            "name": "Horrible Scar",
+            "description": "A mark that draws every eye.",
+            "mechanic": "Disadvantage on Charisma (Persuasion) checks, advantage on Charisma (Intimidation) checks. Only 6th-level or higher magic (such as heal or regenerate) removes the scar."
+          },
+          "festeringWound": {
+            "name": "Festering Wound",
+            "description": "The wound will not close, and it is getting worse.",
+            "mechanic": "The character's hit point maximum decreases by 1 for every 24 hours the wound persists. If it drops to 0, the character dies. Heals with magical healing, or if someone tends the wound with a DC 15 Wisdom (Medicine) check once every 24 hours: after ten successes, it heals. (Not automated: it's a decay over time, track it at the table - nothing here counts the days passing.)"
+          },
+          "minorScar": {
+            "name": "Minor Scar",
+            "description": "A superficial mark, nothing more.",
+            "mechanic": "No mechanical effect. Only 6th-level or higher magic (such as heal or regenerate) removes the scar."
           }
         }
       },

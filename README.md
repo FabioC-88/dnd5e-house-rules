@@ -36,27 +36,31 @@ Poi attiva il modulo nel mondo (richiede il sistema `dnd5e`).
   ```
 - **Menomazione invece della morte per danno massiccio** (`lingering-injury-on-massive-damage`,
   disattivata di default) — quando un colpo porterebbe un PG a morte istantanea per la regola del
-  Danno Massiccio del DMG (che dnd5e non automatizza), il modulo lo rileva e applica invece una
-  menomazione permanente casuale (Effetto Attivo sull'attore) — il personaggio sopravvive, gravemente
-  ferito. Solo per i PG. **La penalità è automatizzata**: l'effetto porta con sé i `changes` che
-  dnd5e applica da solo (svantaggio, malus ai tiri per colpire, velocità, PF massimi, caratteristiche).
+  Danno Massiccio del DMG (che dnd5e non automatizza), il modulo lo rileva e tira sulla tabella
+  ufficiale **"Lesioni Persistenti"** del DMG (p. 272), applicata come Effetto Attivo sull'attore —
+  il personaggio sopravvive, gravemente ferito. Solo per i PG. Pesi identici al d20 del manuale
+  (1/20, 1/20, 1/20, 1/20, 3/20, 3/20, 3/20, 3/20, 4/20).
 
-  | Menomazione | Penalità meccanica |
-  |---|---|
-  | Costola Incrinata | svantaggio alle prove di Forza |
-  | Tendine Lacerato | velocità −5 ft e −1 ai tiri per colpire in mischia |
-  | Occhio Ferito | svantaggio a Percezione e −2 ai tiri per colpire a distanza |
-  | Trauma Cranico | svantaggio a concentrazione e iniziativa |
-  | Cicatrice Profonda | −3 PF massimi |
-  | Nervo Danneggiato | svantaggio alle prove di Destrezza |
-  | Costituzione Minata | −1 a Costituzione |
-  | Fiato Corto | velocità −5 ft e svantaggio alle prove di Costituzione |
+  | Lesione | Automatizzato | Non automatizzato (a mano, al tavolo) |
+  |---|---|---|
+  | Occhio Perso | svantaggio a Percezione | svantaggio ai tiri per colpire a distanza; accecato se resta senza occhi |
+  | Braccio/Mano Persi | — | un solo oggetto in mano alla volta |
+  | Piede/Gamba Persi | velocità dimezzata | bastone/protesi; cade prono dopo Scatto; svantaggio Destrezza per l'equilibrio |
+  | Azzoppato | velocità −5 ft (−1,5 m) | TS Destrezza CD 10 dopo Scatto o cade prono |
+  | Lesione Interna | — | TS Costituzione CD 15 ad ogni azione, o perde azione e reazioni |
+  | Costole Rotte | — | come sopra, CD 10 |
+  | Cicatrice Orribile | svantaggio Persuasione, vantaggio Intimidire | — |
+  | Ferita Purulenta | — | −1 PF massimi ogni 24h finché non curata |
+  | Cicatrice Minore | — (nessun effetto) | — |
 
-  Nomi e descrizioni stanno in `lang/{en,it}.json` sotto `rules.lingeringInjury.table`, i `changes`
-  nella costante `INJURIES` in cima a `houserules/lingering-injury-on-massive-damage/index.js`: per
-  cambiare la durezza di una menomazione si tocca solo quella tabella. Nei mondi che misurano in
-  metri la penalità alla velocità diventa 1,5 m invece di 5 ft. L'effetto resta finché non lo rimuovi
-  a mano (nessuna scadenza automatica).
+  Dove dnd5e non tiene un dato persistente da far leggere a un Effetto Attivo — lo svantaggio ai tiri
+  per colpire non è mai salvato sull'attore, un tiro salvezza ripetuto o un decadimento nel tempo
+  richiederebbero un hook dedicato — la meccanica resta descritta per intero nell'effetto e nel
+  messaggio in chat, non silenziosamente omessa. Nomi e testi stanno in `lang/{en,it}.json` sotto
+  `rules.lingeringInjury.table`, i `changes` nella costante `INJURIES` in cima a
+  `houserules/lingering-injury-on-massive-damage/index.js`. Nei mondi che misurano in metri le
+  penalità alla velocità si convertono automaticamente. L'effetto resta finché non lo rimuovi a mano
+  (nessuna scadenza automatica).
 - **Le ferite non guariscono da sole** (`slow-natural-healing`, disattivata di default) — col riposo
   lungo **non** si recuperano PF in automatico: si torna su solo spendendo Dadi Vita (la variante
   "Slow Natural Healing" del DMG). Tutto il resto del riposo è invariato: Dadi Vita, slot, poteri e
