@@ -31,40 +31,53 @@
       },
       "lingeringInjury": {
         "title": "Menomazione invece della morte per danno massiccio",
-        "hint": "Quando il danno in eccesso di un colpo che porta un PG a 0 PF eguaglia o supera i suoi PF massimi (la regola del Danno Massiccio del DMG, che dnd5e non automatizza), invece della morte istantanea tira una menomazione permanente e la applica come Effetto Attivo. Solo per i PG. Rimuovi l'effetto a mano quando è risolto narrativamente.",
+        "hint": "Quando il danno in eccesso di un colpo che porta un PG a 0 PF eguaglia o supera i suoi PF massimi (la regola del Danno Massiccio del DMG, che dnd5e non automatizza), invece della morte istantanea tira sulla tabella \"Lesioni Persistenti\" del DMG e la applica come Effetto Attivo — la parte automatizzabile (svantaggio, vantaggio, velocità) è gestita da dnd5e, il resto (tiri salvezza ripetuti, decadimento nel tempo) resta descritto per il tavolo. Solo per i PG. Rimuovi l'effetto a mano quando è risolto narrativamente.",
         "announcement": "{name} subisce un colpo che sarebbe dovuto essere fatale - invece riporta: {injury}.",
         "table": {
-          "rib": {
-            "name": "Costola Incrinata",
-            "description": "Dolore lancinante ad ogni sforzo fisico intenso."
-          },
-          "tendon": {
-            "name": "Tendine Lacerato",
-            "description": "Un arto risponde a fatica; i movimenti bruschi con quell'arto sono difficili."
-          },
           "eye": {
-            "name": "Occhio Ferito",
-            "description": "La visione periferica da quel lato è gravemente compromessa."
+            "name": "Occhio Perso",
+            "description": "Il colpo distrugge un occhio, o lo lascia inutilizzabile.",
+            "mechanic": "Svantaggio alle prove di Saggezza (Percezione) basate sulla vista e ai tiri per colpire a distanza. Se dopo questa lesione non gli restano occhi, il personaggio è accecato. Rigenerazione o magia equivalente ripristina l'occhio perso. (Lo svantaggio ai tiri a distanza non è automatizzato: dnd5e non tiene questo dato sull'attore, va applicato a mano quando il personaggio attacca a distanza.)"
           },
-          "head": {
-            "name": "Trauma Cranico",
-            "description": "Difficoltà a concentrarsi sotto pressione."
+          "limb": {
+            "name": "Braccio o Mano Persi",
+            "description": "L'arto non risponde più ai comandi, oppure non c'è più.",
+            "mechanic": "Il personaggio non può più impugnare nulla a due mani, e può tenere un solo oggetto alla volta. Rigenerazione o magia equivalente ripristina l'arto perso. (Non automatizzato: nessun Effetto Attivo può limitare cosa un giocatore tiene in mano, va fatto rispettare al tavolo.)"
           },
-          "scar": {
-            "name": "Cicatrice Profonda",
-            "description": "Un marchio permanente - più estetico che invalidante, ma la ferita sottostante non è mai guarita bene."
+          "leg": {
+            "name": "Piede o Gamba Persi",
+            "description": "La gamba non regge più il peso del corpo, o non c'è più.",
+            "mechanic": "Velocità a piedi dimezzata. Serve un bastone, una stampella o una protesi per muoversi, a meno che il personaggio non possieda già una gamba di legno o simile. Cade prono dopo aver usato l'azione di Scatto, e ha svantaggio a tutte le prove di Destrezza per restare in equilibrio. Rigenerazione o magia equivalente ripristina l'arto perso. (Il dimezzamento della velocità è automatizzato; bastone/protesi, la caduta dopo Scatto e lo svantaggio all'equilibrio no.)"
           },
-          "nerve": {
-            "name": "Nervo Danneggiato",
-            "description": "La presa di quella mano non è più affidabile come prima."
+          "hobbled": {
+            "name": "Azzoppato",
+            "description": "Una zoppia che non passa.",
+            "mechanic": "Velocità a piedi ridotta di 5 piedi (1,5 metri). Dopo l'azione di Scatto, tiro salvezza su Destrezza CD 10: fallito, il personaggio cade prono. Guarigione magica rimuove l'azzoppamento. (La riduzione di velocità è automatizzata; il tiro salvezza dopo Scatto no.)"
           },
-          "constitution": {
-            "name": "Costituzione Minata",
-            "description": "Il corpo non si è mai davvero ripreso da quel colpo."
+          "internalInjury": {
+            "name": "Lesione Interna",
+            "description": "Qualcosa, dentro, non va più come dovrebbe.",
+            "mechanic": "Ogni volta che il personaggio tenta un'azione in combattimento, tiro salvezza su Costituzione CD 15: fallito, perde quell'azione e non può usare reazioni fino all'inizio del suo turno successivo. Guarisce con guarigione magica, oppure dopo dieci giorni di riposo completo. (Non automatizzato: è un tiro salvezza ripetuto ad ogni azione, va tenuto a mente al tavolo.)"
           },
-          "breath": {
-            "name": "Fiato Corto",
-            "description": "I polmoni faticano dopo ogni sforzo prolungato."
+          "brokenRibs": {
+            "name": "Costole Rotte",
+            "description": "Ogni respiro profondo è una fitta.",
+            "mechanic": "Stesso effetto della Lesione Interna, ma il tiro salvezza su Costituzione è CD 10. (Non automatizzato, per lo stesso motivo.)"
+          },
+          "horribleScar": {
+            "name": "Cicatrice Orribile",
+            "description": "Un segno che non passa inosservato.",
+            "mechanic": "Svantaggio alle prove di Carisma (Persuasione), vantaggio alle prove di Carisma (Intimidire). Solo magia di 6° livello o superiore (come guarigione o rigenerazione) rimuove la cicatrice."
+          },
+          "festeringWound": {
+            "name": "Ferita Purulenta",
+            "description": "La ferita non si chiude, e peggiora.",
+            "mechanic": "I punti ferita massimi del personaggio calano di 1 ogni 24 ore in cui la ferita persiste. Se arrivano a 0, il personaggio muore. Guarisce con guarigione magica, oppure se qualcuno la medica con una prova di Saggezza (Medicina) CD 15 una volta ogni 24 ore: dopo dieci successi, la ferita è guarita. (Non automatizzato: è un decadimento nel tempo, va tracciato al tavolo — nessun automatismo per il passare dei giorni.)"
+          },
+          "minorScar": {
+            "name": "Cicatrice Minore",
+            "description": "Un segno superficiale, niente di più.",
+            "mechanic": "Nessun effetto meccanico. Solo magia di 6° livello o superiore (come guarigione o rigenerazione) rimuove la cicatrice."
           }
         }
       },
