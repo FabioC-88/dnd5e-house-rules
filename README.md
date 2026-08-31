@@ -65,10 +65,13 @@ Poi attiva il modulo nel mondo (richiede il sistema `dnd5e`).
   lungo **non** si recuperano PF in automatico: si torna su solo spendendo Dadi Vita (la variante
   "Slow Natural Healing" del DMG). Tutto il resto del riposo è invariato: Dadi Vita, slot, poteri e
   il livello di esaurimento in meno. Vale per tutti gli attori, PNG compresi. Il dialogo del riposo
-  lungo guadagna una spunta opzionale **"Spendi Dadi Vita a riposo finito"**, che tira i dadi *dopo*
-  che il riposo li ha restituiti — l'ordine conta: con le regole 2024 il riposo lungo ridà **tutti**
-  i dadi spesi, quindi spenderli prima significherebbe farseli rimborsare e curarsi a costo zero.
-  Per dosarli uno alla volta c'è l'app Dadi Vita della scheda, che dnd5e ha già di suo.
+  lungo guadagna una spunta opzionale **"Spendi Dadi Vita disponibili prima del riposo"**, che tira i
+  dadi *prima* che il riposo li restituisca — è il campo nativo `autoHD` di dnd5e (che il riposo
+  lungo non espone di suo, solo il riposo breve), quindi lo spende esattamente nel momento in cui lo
+  spenderebbe già il sistema. Con le regole 2024 il riposo lungo ridà **tutti** i dadi spesi, quindi
+  curarsi così di solito non costa nulla: è il pulsante "curami il più possibile prima di dormire",
+  non un modo per far durare i dadi di più. Per dosarli uno alla volta c'è l'app Dadi Vita della
+  scheda, che dnd5e ha già di suo.
 
 Il **riposo lento** (riposo lungo 7 giorni / riposo breve 8 ore, variante "Gritty Realism") **non**
 è gestito da questo modulo: è un'opzione nativa del sistema dnd5e, si attiva direttamente da
