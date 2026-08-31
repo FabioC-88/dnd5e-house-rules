@@ -2,6 +2,7 @@ import exampleRule from "./_example/index.js";
 import exhaustionOnDrop from "./exhaustion-on-drop/index.js";
 import moraleCheck from "./morale-check/index.js";
 import lingeringInjuryOnMassiveDamage from "./lingering-injury-on-massive-damage/index.js";
+import slowNaturalHealing from "./slow-natural-healing/index.js";
 
 /**
  * Explicit registry of every house rule shipped by this module.
@@ -13,5 +14,6 @@ export const HOUSE_RULES = [
   exampleRule,
   exhaustionOnDrop,
   moraleCheck,
-  lingeringInjuryOnMassiveDamage
+  lingeringInjuryOnMassiveDamage,
+  slowNaturalHealing
 ];

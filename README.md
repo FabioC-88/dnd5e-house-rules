@@ -17,9 +17,11 @@ Poi attiva il modulo nel mondo (richiede il sistema `dnd5e`).
 
 ## House rules disponibili
 
-- **Esaurimento a 0 PF** (`exhaustion-on-drop`, disattivata di default) — ogni volta che un PG va a
-  0 PF guadagna un livello di esaurimento, senza tetto per riposo (più K.O. nello stesso combattimento
-  = più livelli). Vale solo per i PG, non per PNG/alleati.
+- **Esaurimento dopo un K.O.** (`exhaustion-on-drop`, disattivata di default) — un PG che finisce a
+  0 PF guadagna un livello di esaurimento **nel momento in cui viene curato e torna sopra 0 PF**, non
+  appena cade: l'esaurimento è il prezzo di essere rimessi in piedi. Nessun tetto per riposo (più K.O.
+  nello stesso combattimento = più livelli, uno per ogni volta che il PG viene tirato su); chi resta a
+  0 PF e non viene mai curato non guadagna nulla. Vale solo per i PG, non per PNG/alleati.
 - **Controllo Morale** (`morale-check`, disattivata di default) — aggiunge uno status "Capo" da
   attivare sui token dal Token HUD (come Prone/Poisoned) e, quando un PNG scende a metà PF o un token
   marcato "Capo" cade, un messaggio privato al DM con tre pulsanti diretti (Normale / Svantaggio /
@@ -38,6 +40,14 @@ Poi attiva il modulo nel mondo (richiede il sistema `dnd5e`).
   menomazione permanente casuale (Effetto Attivo sull'attore, tabella originale in `lang/{en,it}.json`
   sotto `rules.lingeringInjury.table`) — il personaggio sopravvive, gravemente ferito. Solo per i PG.
   L'effetto resta finché non lo rimuovi a mano (nessuna scadenza automatica).
+- **Le ferite non guariscono da sole** (`slow-natural-healing`, disattivata di default) — col riposo
+  lungo **non** si recuperano PF in automatico: si torna su solo spendendo Dadi Vita (la variante
+  "Slow Natural Healing" del DMG). Tutto il resto del riposo è invariato: Dadi Vita, slot, poteri e
+  il livello di esaurimento in meno. Vale per tutti gli attori, PNG compresi. Il dialogo del riposo
+  lungo guadagna una spunta opzionale **"Spendi Dadi Vita a riposo finito"**, che tira i dadi *dopo*
+  che il riposo li ha restituiti — l'ordine conta: con le regole 2024 il riposo lungo ridà **tutti**
+  i dadi spesi, quindi spenderli prima significherebbe farseli rimborsare e curarsi a costo zero.
+  Per dosarli uno alla volta c'è l'app Dadi Vita della scheda, che dnd5e ha già di suo.
 
 Il **riposo lento** (riposo lungo 7 giorni / riposo breve 8 ore, variante "Gritty Realism") **non**
 è gestito da questo modulo: è un'opzione nativa del sistema dnd5e, si attiva direttamente da
